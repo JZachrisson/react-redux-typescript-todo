@@ -1,17 +1,18 @@
 import React from 'react';
-import './App.css';
+import TodoListItem from './components/Todo/TodoListItem';
 import Form from './components/FormElements/Form';
+
+const todos: Array<Todo> = [
+  { id: Date.now(), text: 'WALK DOG', complete: true },
+  { id: Date.now(), text: 'SHOP', complete: false },
+];
 
 function App() {
   return (
     <div className="App">
       <Form />
-      <h1>MY TODOS</h1>
-      <ul>
-        <li>Todo 1</li>
-        <li>Todo 2</li>
-        <li>Todo 3</li>
-      </ul>
+      <TodoListItem todo={todos[0]} />
+      <TodoListItem todo={todos[1]} />
     </div>
   );
 }
